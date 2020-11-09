@@ -5,7 +5,7 @@ const app = new express();
 const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
-  res.send("<p>Server is runnning.</p>")
+  res.end("Server is running")
 })
 
 app.post("/url", (req, res) => {
