@@ -2,7 +2,7 @@ const { LogoScrape } = require("logo-scrape");
 const express = require("express");
 const app = new express();
 
-const port = process.nextTick.port || 8080;
+const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
   res.send("Working")
@@ -19,5 +19,5 @@ app.post("/url", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running on port " + port);
 });
