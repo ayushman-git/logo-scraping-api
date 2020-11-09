@@ -2,7 +2,11 @@ const { LogoScrape } = require("logo-scrape");
 const express = require("express");
 const app = new express();
 
-app.post("/", (req, res) => {
+app.get("/", (req, res) => {
+  res.send("Working")
+})
+
+app.post("/url", (req, res) => {
   (async () => {
     const url = req.body;
     const logo = await LogoScrape.getLogo(url);
