@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("<h2>Server is running.</h2>");
-  console.log("GET req");
 });
 
 app.post("/url", (req, res) => {
@@ -20,7 +19,7 @@ app.post("/url", (req, res) => {
     const url = req.body.url;
     const logo = await LogoScrape.getLogo(url);
     const logos = await LogoScrape.getLogos(url);
-    console.log({ logo, logos });
+    console.log(logo);
     res.send(logos);
   })();
 });
