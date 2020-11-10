@@ -17,6 +17,7 @@ app.post("/url", (req, res) => {
   //   res.send(logos);
   // })();
   console.log(req.body)
+  res.sendStatus(200);
 });
 
 app.listen(port, () => {
