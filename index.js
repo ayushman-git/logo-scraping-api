@@ -6,7 +6,9 @@ const app = new express();
 
 const port = process.env.PORT || 3000;
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("<h2>Server is running.</h2>");
