@@ -16,7 +16,7 @@ app.post("/url", (req, res) => {
   //   console.log({ logo, logos });
   //   res.send(logos);
   // })();
-  console.log(req)
+  console.log(req.body)
 });
 
 app.listen(port, () => {
