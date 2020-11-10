@@ -5,8 +5,8 @@ const app = new express();
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("<h2>Server is running.</h2>")
-})
+  res.send("<h2>Server is running.</h2>");
+});
 
 app.post("/url", (req, res) => {
   // (async () => {
@@ -16,8 +16,8 @@ app.post("/url", (req, res) => {
   //   console.log({ logo, logos });
   //   res.send(logos);
   // })();
-  console.log(req.body)
-  res.sendStatus(200);
+  console.log(req.body);
+  res.json({ message: "received" });
 });
 
 app.listen(port, () => {
