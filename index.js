@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("<h2>Server is running.</h2>");
+  console.log("GET req")
 });
 
 app.post("/url", (req, res) => {
