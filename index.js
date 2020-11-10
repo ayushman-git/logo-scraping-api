@@ -21,7 +21,7 @@ app.post("/url", (req, res) => {
   //   console.log({ logo, logos });
   //   res.send(logos);
   // })();
-  console.log(req.body);
+  console.log(req);
   res.json({ message: "received" });
 });
 
