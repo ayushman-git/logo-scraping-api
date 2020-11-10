@@ -2,7 +2,7 @@ const { LogoScrape } = require("logo-scrape");
 const express = require("express");
 const app = new express();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("<h2>Server is running.</h2>")
