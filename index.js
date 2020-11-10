@@ -16,15 +16,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/url", (req, res) => {
-  // (async () => {
-  //   const url = req.body;
-  //   const logo = await LogoScrape.getLogo(url);
-  //   const logos = await LogoScrape.getLogos(url);
-  //   console.log({ logo, logos });
-  //   res.send(logos);
-  // })();
-  console.log(req);
-  res.json({ message: "received" });
+  (async () => {
+    const url = req.body.url;
+    const logo = await LogoScrape.getLogo(url);
+    const logos = await LogoScrape.getLogos(url);
+    console.log({ logo, logos });
+    res.send(logos);
+  })();
 });
 
 app.listen(port, () => {
