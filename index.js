@@ -1,12 +1,14 @@
 const { LogoScrape } = require("logo-scrape");
 const express = require("express");
+const cors = require("cors");
 const app = new express();
 
 const port = process.env.PORT || 3000;
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("<h2>Server is running.</h2>");
-  console.log("GET req")
+  console.log("GET req");
 });
 
 app.post("/url", (req, res) => {
