@@ -9,13 +9,14 @@ app.get("/", (req, res) => {
 })
 
 app.post("/url", (req, res) => {
-  (async () => {
-    const url = req.body;
-    const logo = await LogoScrape.getLogo(url);
-    const logos = await LogoScrape.getLogos(url);
-    console.log({ logo, logos });
-    res.send(logos);
-  })();
+  // (async () => {
+  //   const url = req.body;
+  //   const logo = await LogoScrape.getLogo(url);
+  //   const logos = await LogoScrape.getLogos(url);
+  //   console.log({ logo, logos });
+  //   res.send(logos);
+  // })();
+  console.log(req)
 });
 
 app.listen(port, () => {
