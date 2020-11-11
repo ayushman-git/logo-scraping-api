@@ -3,11 +3,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = new express();
+const hdLogos = require("./assets/logos");
 
 const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
@@ -17,9 +17,12 @@ app.get("/", (req, res) => {
 app.post("/url", (req, res) => {
   (async () => {
     const url = req.body.url;
-    const logo = await LogoScrape.getLogo(url);
+    const webName = url.replace(/.+\/\/|www.|\..+/g, "");
     const logos = await LogoScrape.getLogos(url);
-    console.log(logo);
+    const hdLogo = hdLogos[webName];
+    if (hdLogo) {
+      logos.unshift({ url: hdLogo });
+    }
     res.send(logos);
   })();
 });
